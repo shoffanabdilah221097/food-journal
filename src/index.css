@@ -1,25 +1,116 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300&display=swap");
 
 #root {
-  padding: 15px;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  background-color: rgb(241, 190, 123);
+  /* background-color: rgb(214, 154, 74); */
+  background-color: black;
   color: white;
   font-family: "Poppins", sans-serif;
 }
 
-.tampilan {
+h4 {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+/*Navbar Start*/
+.navbar-brand {
+  transition: all 0.5s ease 0s;
+}
+
+.navbar-brand:hover {
+  color: goldenrod;
+  transform: rotate(2deg);
+}
+
+.nav-link:hover {
+  color: goldenrod;
+  transform: rotate(2deg);
 }
 
 #navbarScroll .nav-link {
   margin-left: 20px;
 }
+/*Navbar End*/
 
-.menu-container {
+/*Banner start*/
+.home {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.headerContainer {
+  width: auto;
+  margin-left: 170px;
+  color: goldenrod;
+}
+
+.text-food {
+  color: white;
+  font-size: 20px;
+}
+/*Banner End*/
+
+/*responsive Banner start*/
+@media only screen and (max-width: 600px) {
+  .home {
+    height: 82vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .home .headerContainer {
+    margin: 0;
+    border-radius: 10px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+  }
+  .headerContainer h1 {
+    font-size: 30px;
+    height: 30px;
+    margin: 20px 0px;
+    color: goldenrod;
+  }
+  .text-food {
+    font-size: 15px;
+  }
+}
+/*responsive Banner end*/
+
+
+/*card start*/
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+/*card End*/
+
+.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.card {
+  border-radius: 10px;
 }

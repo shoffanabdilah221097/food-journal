@@ -1,32 +1,26 @@
-import Navigation from "./components/Navigation";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Service from "./pages/Service";
 import Menu from "./pages/Menu";
-import Gallery from "./pages/Gallery";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
-  },
-  {
-    path: "/about",
-    element: <About></About>,
-  },
-  {
-    path: "/service",
-    element: <Service></Service>,
+    element: <Home />,
   },
   {
     path: "/menu",
-    element: <Menu></Menu>,
+    element: <Menu />,
   },
   {
-    path: "/gallery",
-    element: <Gallery></Gallery>,
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
   },
 ]);
 
