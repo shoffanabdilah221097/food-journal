@@ -6,7 +6,7 @@
 }
 
 body {
-  /* background-color: rgb(214, 154, 74); */
+  background-color: rgb(214, 154, 74);
   background-color: black;
   color: white;
   font-family: "Poppins", sans-serif;
@@ -91,26 +91,140 @@ h4 {
 }
 /*responsive Banner end*/
 
-
 /*card start*/
-.card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card-container {
-  display: flex;
-  justify-content: center;
-}
-/*card End*/
-
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.card {
-  border-radius: 10px;
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.custom-card {
+  background-color: goldenrod;
+  height: 280px;
+  margin: 12px;
+  margin-bottom: 15px;
+}
+
+.card-title {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* 
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+} */
+/*card End*/
+
+/*modalCard*/
+.custom-modal .modal-content {
+  background-color: goldenrod;
+  color: black;
+}
+/*modalCard*/
+
+/*Login Start*/
+.container-login {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 420px;
+  width: 100%;
+  background: white;
+  border-radius: 15px;
+  z-index: 1021;
+  border: 1px solid black;
+}
+
+.container-login .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.container-login .registration {
+  display: none;
+}
+#check:checked ~ .registration {
+  display: block;
+}
+#check:checked ~ .login {
+  display: none;
+}
+#check {
+  display: none;
+}
+.container-login .form {
+  padding: 2rem;
+}
+.header {
+  color: black;
+}
+.form header {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.form input {
+  height: 45px;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid black;
+  border-radius: 6px;
+  outline: none;
+}
+.form input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.form a {
+  font-size: 16px;
+  color: #009579;
+  text-decoration: none;
+}
+.form a:hover {
+  text-decoration: underline;
+}
+.form input .button {
+  color: black;
+  background: #009579;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.signup {
+  font-size: 17px;
+  text-align: center;
+  color: black;
+}
+.signup label {
+  color: #009579;
+  cursor: pointer;
+}
+.signup label:hover {
+  text-decoration: underline;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"] {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+}
+/*Login End*/
