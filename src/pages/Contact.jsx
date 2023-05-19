@@ -50,7 +50,7 @@ function Contact() {
             <TableBody>
               <TableRow>
                 <TableCell>
-                  <SupportAgentIcon sx={{ color: "red" }} /> 123-456-7890 (tollfree)
+                  <SupportAgentIcon sx={{ color: "red",  }} /> 123-456-7890 (tollfree)
                 </TableCell>
               </TableRow>
               <TableRow>

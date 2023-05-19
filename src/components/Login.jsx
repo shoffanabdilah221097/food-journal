@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { apiFood } from "../api/apiFood";
 
-const Login = ({ customClose, ketikaSuccessLogin }) => {
+const Login = ({ customClose}) => {
   const [logEmail, setLogEmail] = useState("");
   const [logPass, setLogPass] = useState("");
 
@@ -40,9 +40,6 @@ const Login = ({ customClose, ketikaSuccessLogin }) => {
 
       alert("login sukses");
 
-      // ketikaSuccessLogin();
-
-      // resetForm();
       window.location.reload();
     } catch (error) {
       alert(error.response.data.message);
@@ -55,7 +52,6 @@ const Login = ({ customClose, ketikaSuccessLogin }) => {
     } else if (regPass === "") {
       alert("password harus diisi");
     }
-    // console.log({ regName, regEmail, regPass, regPassRepeat, regPhone, regImage });
 
     const data = {
       name: regName,

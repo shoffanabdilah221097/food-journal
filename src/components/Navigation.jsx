@@ -7,7 +7,7 @@ import { apiFood } from "../api/apiFood";
 
 const Navigation = () => {
   const [showLogin, setShowLogin] = useState(false);
-  const [isLogin, setIsLogin] = useState(false); // is current user login?
+  const [isLogin, setIsLogin] = useState(false);
   const [userLogin, setUserLogin] = useState("");
   const navigate = useNavigate();
   const handleLoginClick = () => {
@@ -16,20 +16,17 @@ const Navigation = () => {
 
   const handleLogout = async () => {
     try {
-      // call api logout
       const result = await apiFood.get("/logout", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
 
-      // harus dihapus juga token di localStoragenya
       localStorage.removeItem("token");
 
-      // change state login
       setIsLogin(false);
       setUserLogin("");
-      navigate('/');
+      navigate("/");
       window.location.reload();
     } catch (error) {
       alert("logout gagal, ada yang error");
@@ -42,14 +39,12 @@ const Navigation = () => {
 
   const getUserData = async () => {
     try {
-      // call api get user
       const result = await apiFood.get("/user", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
 
-      // get nama user yang sedang login
       setUserLogin(result.data.user.name);
     } catch (error) {
       alert("error get detail user login");
@@ -57,11 +52,8 @@ const Navigation = () => {
   };
 
   const successLogin = () => {
-    // popup login dihapus
     handleClose();
-    // change state login
     setIsLogin(true);
-    // get user data
     getUserData();
   };
 
@@ -101,15 +93,7 @@ const Navigation = () => {
                 Contact
               </NavLink>
             </Nav>
-            {/* {isLogin && `${userLogin}`} */}
             <Form className="d-flex">
-              {/* {
-                isLogin 
-                ? 
-                <Button variant="btn btn-outline-light" onClick={handleLogout}> Logout </Button>
-                :
-                <Button variant="btn btn-outline-light" onClick={handleLoginClick}> Login </Button>
-              } */}
               {isLogin && (
                 <Dropdown className="me-2">
                   <Dropdown.Toggle variant="secondary" id="dropdown-basic">

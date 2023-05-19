@@ -105,7 +105,7 @@ h4 {
 }
 
 .custom-card {
-  background-color: goldenrod;
+  background-color: white;
   height: 280px;
   margin: 12px;
   margin-bottom: 15px;
@@ -116,20 +116,33 @@ h4 {
   font-size: 16px;
   font-weight: bold;
 }
-/* 
-.card-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-} */
 /*card End*/
+
 
 /*modalCard*/
 .custom-modal .modal-content {
-  background-color: goldenrod;
+  background-color: white;
   color: black;
+  width: 160%;
+  height: 430px;
+}
+
+.tabel span {
+  font-weight: bold;
+}
+
+.bx {
+  margin-top: 10px;
+  font-size: 25px;
 }
 /*modalCard*/
+
+
+/*dashboardfood*/
+.dashboardfood th, .dashboardfood td {
+  color: white !important;
+}
+
 
 /*Login Start*/
 .container-login {

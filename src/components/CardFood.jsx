@@ -5,7 +5,6 @@ import ModalCard from "./ModalCard";
 
 const CardFood = () => {
   const [food, setFood] = useState([]);
-  const [selectedFood, setSelectedFood] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   const getFood = async () => {
@@ -22,9 +21,8 @@ const CardFood = () => {
     getFood();
   }, []);
 
-  const handleCardClick = (food) => {
-    setSelectedFood(food);
-    setShowModal(true);
+  const handleCardClick = (id) => {
+    setShowModal(id);
   };
 
   const handleCloseModal = () => {
@@ -39,25 +37,19 @@ const CardFood = () => {
         {food.slice(1, 13).map((eachFood, idx) => {
           return (
             <div className="col-md-4 col-lg-3 col-sm-6" key={idx}>
-              <Card className="custom-card" onClick={() => handleCardClick(eachFood)}>
+              <Card className="custom-card" onClick={() => handleCardClick(eachFood.id)} key={idx}>
                 <Card.Img variant="top" src={eachFood.imageUrl} title="menu" style={{ height: "70%" }} />
                 <Card.Body className="card-body">
                   <Card.Title className="card-title" style={{ color: "black" }}>
                     {eachFood.name}
                   </Card.Title>
-                  {/* <Card.Text style={{ color: "black" }}>{eachFood.description}</Card.Text> */}
-                  {/* <div className="card-container">
-                      <Link to={`/menu/${eachFood.id}`} className="btn btn-primary">
-                        Lihat detail
-                      </Link>
-                    </div> */}
                 </Card.Body>
               </Card>
+              <ModalCard show={showModal === eachFood.id} onHide={handleCloseModal} food={eachFood} />
             </div>
           );
         })}
       </div>
-      {selectedFood && <ModalCard show={showModal} onHide={handleCloseModal} food={selectedFood} />}
     </div>
   );
 };
